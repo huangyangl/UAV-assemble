@@ -1,0 +1,189 @@
+jetson@unbutu:~/shd/RpanionServer-ws/Rpanion-server$ cd ./deploy && ./jetson-deploy.sh
++ git submodule update --init --recursive
++ sudo adduser jetson dialout
+[sudo] password for jetson:
+The user `jetson' is already a member of `dialout'.
++ sudo systemctl disable nvgetty.service
+Removed /etc/systemd/system/multi-user.target.wants/nvgetty.service.
++ ./install_common_libraries.sh
++ sudo apt update
+Hit:1 https://packages.microsoft.com/repos/vscode stable InRelease
+Hit:4 http://ports.ubuntu.com/ubuntu-ports focal InRelease
+Hit:5 http://packages.ros.org/ros/ubuntu focal InRelease
+Hit:2 https://repo.download.nvidia.cn/jetson/common r35.3 InRelease
+Hit:3 https://repo.download.nvidia.cn/jetson/t234 r35.3 InRelease
+Hit:6 http://ports.ubuntu.com/ubuntu-ports focal-updates InRelease
+Hit:7 http://ports.ubuntu.com/ubuntu-ports focal-backports InRelease
+Hit:8 http://ports.ubuntu.com/ubuntu-ports focal-security InRelease
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+142 packages can be upgraded. Run 'apt list --upgradable' to see them.
++ sudo apt upgrade -y
+Reading package lists... Done
+Building dependency tree
+Reading state information... Done
+Calculating upgrade... Done
+The following packages were automatically installed and are no longer required:
+  libcoin-dev libcoin80c libdmtx-dev libdmtx0b libglew-dev libois-1.3.0v5 libois-dev libxmu-dev libxmu-headers libxpm-dev linux-headers-5.4.0-181 linux-headers-5.4.0-181-generic usb-modeswitch
+  usb-modeswitch-data
+Use 'sudo apt autoremove' to remove them.
+Get more security updates through Ubuntu Pro with 'esm-apps' enabled:
+  vlc-bin libmagick++-dev vlc-plugin-video-output libavformat58
+  libmagick++-6.q16-8 libavfilter7 tigervnc-viewer ffmpeg libpython3.9-minimal
+  liburiparser1 vlc-plugin-samba tigervnc-common libmagickcore-6.q16-6-extra
+  libswresample3 vlc-plugin-qt libopenexr-dev libpython3.9-stdlib libzmq5
+  iperf3 python2.7-minimal libhdf5-103 libmagickwand-6.q16-6 vlc-plugin-skins2
+  vlc-plugin-visualization vlc-l10n libcgraph6 tigervnc-standalone-server
+  libpython2.7 python2.7 libavformat-dev python3.9 libmagickwand-6-headers
+  vlc-plugin-notify libvlc5 libhdf5-dev libswresample-dev libpostproc55
+  liblab-gamut1 libvlccore9 libvlc-bin libavutil-dev libmagick++-6-headers
+  libavcodec-dev hdf5-helpers libpmix2 libmagickcore-6-headers
+  python3.9-minimal libhdf5-cpp-103 libavcodec58 libmagickcore-6-arch-config
+  vlc libcdt5 libavutil56 vlc-data libpathplan4 libavdevice58
+  libmagickwand-6.q16-dev libswscale5 libgvpr2 libopenexr24 libsdl2-2.0-0
+  libmysofa1 libmagickcore-6.q16-6 libiperf0 vlc-plugin-video-splitter
+  libpython2.7-minimal hdf5-tools libmagick++-6.q16-dev libhdf5-openmpi-103
+  libswscale-dev libgvc6 vlc-plugin-base libpython2.7-stdlib python3-scipy
+  libmagickcore-6.q16-dev graphviz libavresample4 libde265-0
+  imagemagick-6-common
+Learn more about Ubuntu Pro at https://ubuntu.com/pro
+The following NEW packages will be installed:
+  linux-headers-5.4.0-190 linux-headers-5.4.0-190-generic
+The following packages will be upgraded:
+  bind9-host bind9-libs bluez bluez-obexd containerd curl docker.io espeak-ng-data firefox fonts-opensymbol gdb gdbserver ghostscript ghostscript-x gir1.2-gdkpixbuf-2.0 gir1.2-gtk-2.0 gir1.2-gtk-3.0
+  gir1.2-vte-2.91 git git-man gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-plugins-base gstreamer1.0-plugins-base-apps gstreamer1.0-x gtk-update-icon-cache gtk2-engines-pixbuf imagemagick-6-common
+  libbluetooth3 libc-bin libc-dev-bin libc6 libc6-dbg libc6-dev libcdio18 libcups2 libcupsimage2 libcurl3-gnutls libcurl4 libespeak-ng1 libgail-common libgail18 libgdk-pixbuf2.0-0 libgdk-pixbuf2.0-bin
+  libgdk-pixbuf2.0-common libgdk-pixbuf2.0-dev libgif7 libglib2.0-0 libglib2.0-bin libglib2.0-data libglib2.0-dev libglib2.0-dev-bin libglib2.0-doc libglib2.0-tests libgs9 libgs9-common libgtk-3-0
+  libgtk-3-common libgtk2.0-0 libgtk2.0-bin libgtk2.0-common libgtk2.0-dev libjuh-java libjurt-java libmagick++-6-headers libmagick++-6.q16-8 libmagick++-6.q16-dev libmagick++-dev
+  libmagickcore-6-arch-config libmagickcore-6-headers libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16-dev libmagickwand-6-headers libmagickwand-6.q16-6 libmagickwand-6.q16-dev
+  libmysqlclient-dev libmysqlclient21 libndp0 libpython3.8 libpython3.8-dev libpython3.8-minimal libpython3.8-stdlib libreoffice-base-core libreoffice-calc libreoffice-common libreoffice-core
+  libreoffice-draw libreoffice-gnome libreoffice-gtk3 libreoffice-impress libreoffice-math libreoffice-pdfimport libreoffice-style-breeze libreoffice-style-colibre libreoffice-style-elementary
+  libreoffice-style-tango libreoffice-writer libridl-java libssl-dev libssl1.1 libtiff-dev libtiff5 libtiffxx5 libtss2-esys0 libuno-cppu3 libuno-cppuhelpergcc3-3 libuno-purpenvhelpergcc3-3 libuno-sal3
+  libuno-salhelpergcc3-3 libunoloader-java libvpx6 libvte-2.91-0 libvte-2.91-common linux-headers-generic linux-libc-dev locales openssl openvpn python-zipp python3-idna python3-uno python3-zipp python3.8
+  python3.8-dev python3.8-minimal runc snapd thunderbird thunderbird-gnome-support tzdata ubuntu-advantage-tools ubuntu-pro-client ubuntu-pro-client-l10n uno-libs-private ure vim vim-common vim-runtime
+  wget wpasupplicant xxd
+142 upgraded, 2 newly installed, 0 to remove and 0 not upgraded.
+131 standard LTS security updates
+Need to get 370 MB of archives.
+After this operation, 107 MB of additional disk space will be used.
+Get:1 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libc6-dbg arm64 2.31-0ubuntu9.16 [16.8 MB]
+Get:2 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libc6-dev arm64 2.31-0ubuntu9.16 [2,072 kB]
+Get:3 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libc-dev-bin arm64 2.31-0ubuntu9.16 [64.2 kB]
+Get:4 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 linux-libc-dev arm64 5.4.0-190.210 [1,118 kB]
+Get:5 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libc6 arm64 2.31-0ubuntu9.16 [2,277 kB]
+Get:6 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 locales all 2.31-0ubuntu9.16 [3,871 kB]
+Get:7 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libc-bin arm64 2.31-0ubuntu9.16 [498 kB]
+Get:8 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 python3.8-dev arm64 3.8.10-0ubuntu1~20.04.11 [514 kB]
+Get:9 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libpython3.8-dev arm64 3.8.10-0ubuntu1~20.04.11 [3,763 kB]
+Get:10 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libpython3.8 arm64 3.8.10-0ubuntu1~20.04.11 [1,491 kB]
+Get:11 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libssl-dev arm64 1.1.1f-1ubuntu2.23 [1,464 kB]
+Get:12 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libssl1.1 arm64 1.1.1f-1ubuntu2.23 [1,159 kB]
+Get:13 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 python3.8 arm64 3.8.10-0ubuntu1~20.04.11 [387 kB]
+Get:14 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libpython3.8-stdlib arm64 3.8.10-0ubuntu1~20.04.11 [1,648 kB]
+Get:15 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 python3.8-minimal arm64 3.8.10-0ubuntu1~20.04.11 [1,833 kB]
+Get:16 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libpython3.8-minimal arm64 3.8.10-0ubuntu1~20.04.11 [715 kB]
+Get:17 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagick++-6.q16-dev arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [119 kB]
+Get:18 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagick++-dev all 8:6.9.10.23+dfsg-2.1ubuntu11.10 [1,412 B]
+Get:19 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagick++-6-headers all 8:6.9.10.23+dfsg-2.1ubuntu11.10 [47.5 kB]
+Get:20 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickwand-6.q16-dev arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [293 kB]
+Get:21 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickwand-6-headers all 8:6.9.10.23+dfsg-2.1ubuntu11.10 [10.5 kB]
+Get:22 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickcore-6.q16-dev arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [889 kB]
+Get:23 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickcore-6-arch-config arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [25.5 kB]
+Get:24 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickcore-6-headers all 8:6.9.10.23+dfsg-2.1ubuntu11.10 [49.3 kB]
+Get:25 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 imagemagick-6-common all 8:6.9.10.23+dfsg-2.1ubuntu11.10 [62.2 kB]
+Get:26 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickwand-6.q16-6 arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [243 kB]
+Get:27 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libglib2.0-dev arm64 2.64.6-1~ubuntu20.04.7 [1,522 kB]
+Get:28 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libglib2.0-dev-bin arm64 2.64.6-1~ubuntu20.04.7 [108 kB]
+Get:29 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libglib2.0-data all 2.64.6-1~ubuntu20.04.7 [5,944 B]
+Get:30 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libglib2.0-bin arm64 2.64.6-1~ubuntu20.04.7 [69.2 kB]
+Get:31 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libglib2.0-0 arm64 2.64.6-1~ubuntu20.04.7 [1,201 kB]
+Get:32 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickcore-6.q16-6-extra arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [60.2 kB]
+Get:33 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libtiff-dev arm64 4.1.0+git191117-2ubuntu0.20.04.13 [276 kB]
+Get:34 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libtiff5 arm64 4.1.0+git191117-2ubuntu0.20.04.13 [153 kB]
+Get:35 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libtiffxx5 arm64 4.1.0+git191117-2ubuntu0.20.04.13 [5,788 B]
+Get:36 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagickcore-6.q16-6 arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [1,452 kB]
+Get:37 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libmagick++-6.q16-8 arm64 8:6.9.10.23+dfsg-2.1ubuntu11.10 [123 kB]
+Get:38 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 openssl arm64 1.1.1f-1ubuntu2.23 [600 kB]
+Get:39 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 tzdata all 2024a-0ubuntu0.20.04.1 [301 kB]
+Get:40 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 ubuntu-pro-client-l10n arm64 32.3.1~20.04 [18.5 kB]
+Get:41 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 ubuntu-pro-client arm64 32.3.1~20.04 [206 kB]
+Get:42 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 ubuntu-advantage-tools all 32.3.1~20.04 [11.0 kB]
+Get:43 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 vim arm64 2:8.1.2269-1ubuntu5.23 [1,141 kB]
+Get:44 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 vim-runtime all 2:8.1.2269-1ubuntu5.23 [5,880 kB]
+Get:45 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 xxd arm64 2:8.1.2269-1ubuntu5.23 [52.4 kB]
+Get:46 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 vim-common all 2:8.1.2269-1ubuntu5.23 [87.9 kB]
+Get:47 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 bind9-libs arm64 1:9.18.28-0ubuntu0.20.04.1 [1,037 kB]
+Get:48 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 bind9-host arm64 1:9.18.28-0ubuntu0.20.04.1 [45.7 kB]
+Get:49 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 wget arm64 1.20.3-1ubuntu2.1 [331 kB]
+Get:50 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 bluez arm64 5.53-0ubuntu3.8 [897 kB]
+Get:51 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 bluez-obexd arm64 5.53-0ubuntu3.8 [161 kB]
+Get:52 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 runc arm64 1.1.12-0ubuntu2~20.04.1 [7,190 kB]
+Get:53 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 containerd arm64 1.7.12-0ubuntu2~20.04.1 [24.2 MB]
+Get:54 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 curl arm64 7.68.0-1ubuntu2.23 [157 kB]
+Get:55 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcurl4 arm64 7.68.0-1ubuntu2.23 [216 kB]
+Get:56 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 docker.io arm64 24.0.7-0ubuntu2~20.04.1 [18.6 MB]
+Get:57 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libespeak-ng1 arm64 1.50+dfsg-6ubuntu0.1 [176 kB]
+Get:58 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 espeak-ng-data arm64 1.50+dfsg-6ubuntu0.1 [3,682 kB]
+Get:59 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgdk-pixbuf2.0-dev arm64 2.40.0+dfsg-3ubuntu0.5 [43.5 kB]
+Get:60 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgdk-pixbuf2.0-bin arm64 2.40.0+dfsg-3ubuntu0.5 [13.8 kB]
+Get:61 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gir1.2-gdkpixbuf-2.0 arm64 2.40.0+dfsg-3ubuntu0.5 [8,272 B]
+Get:62 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgdk-pixbuf2.0-0 arm64 2.40.0+dfsg-3ubuntu0.5 [156 kB]
+Get:63 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgdk-pixbuf2.0-common all 2.40.0+dfsg-3ubuntu0.5 [4,628 B]
+Get:64 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcupsimage2 arm64 2.3.1-9ubuntu1.8 [6,060 B]
+Get:65 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcups2 arm64 2.3.1-9ubuntu1.8 [218 kB]
+Get:66 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgtk-3-common all 3.24.20-0ubuntu1.2 [234 kB]
+Get:67 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgtk-3-0 arm64 3.24.20-0ubuntu1.2 [2,425 kB]
+Get:68 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 firefox arm64 128.0+build2-0ubuntu0.20.04.1 [57.7 MB]
+Get:69 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 fonts-opensymbol all 2:102.11+LibO6.4.7-0ubuntu0.20.04.10 [93.3 kB]
+Get:70 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gdb arm64 9.2-0ubuntu1~20.04.2 [3,175 kB]
+Get:71 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gdbserver arm64 9.2-0ubuntu1~20.04.2 [198 kB]
+Get:72 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 ghostscript-x arm64 9.50~dfsg-5ubuntu4.13 [41.9 kB]
+Get:73 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 ghostscript arm64 9.50~dfsg-5ubuntu4.13 [52.3 kB]
+Get:74 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgs9 arm64 9.50~dfsg-5ubuntu4.13 [2,010 kB]
+Get:75 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgs9-common all 9.50~dfsg-5ubuntu4.13 [682 kB]
+Get:76 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gtk-update-icon-cache arm64 3.24.20-0ubuntu1.2 [27.5 kB]
+Get:77 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgtk2.0-common all 2.24.32-4ubuntu4.1 [126 kB]
+Get:78 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgtk2.0-bin arm64 2.24.32-4ubuntu4.1 [7,728 B]
+Get:79 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgail-common arm64 2.24.32-4ubuntu4.1 [107 kB]
+Get:80 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgail18 arm64 2.24.32-4ubuntu4.1 [13.7 kB]
+Get:81 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libgtk2.0-dev arm64 2.24.32-4ubuntu4.1 [782 kB]
+Get:82 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgtk2.0-0 arm64 2.24.32-4ubuntu4.1 [1,649 kB]
+Get:83 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 gir1.2-gtk-2.0 arm64 2.24.32-4ubuntu4.1 [172 kB]
+Get:84 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gir1.2-gtk-3.0 arm64 3.24.20-0ubuntu1.2 [196 kB]
+Get:85 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libvte-2.91-0 arm64 0.60.3-0ubuntu1~20.5 [177 kB]
+Get:86 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libvte-2.91-common arm64 0.60.3-0ubuntu1~20.5 [7,456 B]
+Get:87 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gir1.2-vte-2.91 arm64 0.60.3-0ubuntu1~20.5 [9,492 B]
+Get:88 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 git-man all 1:2.25.1-1ubuntu3.13 [887 kB]
+Get:89 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcurl3-gnutls arm64 7.68.0-1ubuntu2.23 [213 kB]
+Get:90 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 git arm64 1:2.25.1-1ubuntu3.13 [4,427 kB]
+Get:91 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gstreamer1.0-alsa arm64 1.16.3-0ubuntu1.3 [31.4 kB]
+Get:92 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gstreamer1.0-gl arm64 1.16.3-0ubuntu1.3 [99.8 kB]
+Get:93 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gstreamer1.0-plugins-base arm64 1.16.3-0ubuntu1.3 [543 kB]
+Get:94 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gstreamer1.0-plugins-base-apps arm64 1.16.3-0ubuntu1.3 [75.0 kB]
+Get:95 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gstreamer1.0-x arm64 1.16.3-0ubuntu1.3 [68.4 kB]
+Get:96 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 gtk2-engines-pixbuf arm64 2.24.32-4ubuntu4.1 [22.5 kB]
+Get:97 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libbluetooth3 arm64 5.53-0ubuntu3.8 [59.2 kB]
+Get:98 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libcdio18 arm64 2.0.0-2ubuntu0.2 [57.4 kB]
+Get:99 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libgif7 arm64 5.1.9-1ubuntu0.1 [32.1 kB]
+Get:100 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libglib2.0-doc all 2.64.6-1~ubuntu20.04.7 [1,437 kB]
+Get:101 http://ports.ubuntu.com/ubuntu-ports focal-updates/universe arm64 libglib2.0-tests arm64 2.64.6-1~ubuntu20.04.7 [1,285 kB]
+Get:102 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libridl-java all 1:6.4.7-0ubuntu0.20.04.10 [196 kB]
+Get:103 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libjurt-java all 1:6.4.7-0ubuntu0.20.04.10 [105 kB]
+Get:104 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libjuh-java all 1:6.4.7-0ubuntu0.20.04.10 [57.7 kB]
+Get:105 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 ure arm64 1:6.4.7-0ubuntu0.20.04.10 [1,139 kB]
+Get:106 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libunoloader-java all 1:6.4.7-0ubuntu0.20.04.10 [12.5 kB]
+Get:107 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libuno-sal3 arm64 1:6.4.7-0ubuntu0.20.04.10 [138 kB]
+Get:108 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libuno-salhelpergcc3-3 arm64 1:6.4.7-0ubuntu0.20.04.10 [15.3 kB]
+Get:109 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libuno-cppu3 arm64 1:6.4.7-0ubuntu0.20.04.10 [79.9 kB]
+Get:110 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libuno-cppuhelpergcc3-3 arm64 1:6.4.7-0ubuntu0.20.04.10 [241 kB]
+Get:111 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 uno-libs-private arm64 1:6.4.7-0ubuntu0.20.04.10 [194 kB]
+Get:112 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libuno-purpenvhelpergcc3-3 arm64 1:6.4.7-0ubuntu0.20.04.10 [14.7 kB]
+Get:113 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libmysqlclient-dev arm64 8.0.39-0ubuntu0.20.04.1 [1,600 kB]
+Get:114 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libmysqlclient21 arm64 8.0.39-0ubuntu0.20.04.1 [1,257 kB]
+Get:115 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libndp0 arm64 1.7-0ubuntu1.1 [10.8 kB]
+Get:116 http://ports.ubuntu.com/ubuntu-ports focal-updates/main arm64 libreoffice-calc arm64 1:6.4.7-0ubuntu0.20.04.10 [6,231 kB]
+58% [116 libreoffice-calc 0 B/6,231 kB 0%]                                                                                                                                                 234 kB/s 12min 21s
+jetson@unbutu:~/shd/RpanionServer-ws/Rpanion-server/deploy$
+jetson@unbutu:~/shd/RpanionServer-ws/Rpanion-server/deploy$
+
